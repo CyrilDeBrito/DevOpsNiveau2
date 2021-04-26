@@ -1,14 +1,15 @@
-<form *ngIf="user" name="deleteForm" (ngSubmit)="confirmDelete(user?.login!)">
+<form *ngIf="tache" name="deleteForm" (ngSubmit)="confirmDelete(tache?.id!)">
     <div class="modal-header">
-        <h4 class="modal-title">Confirmation de suppression</h4>
+        <h4 class="modal-title">Confirmer la suppression</h4>
 
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="cancel()">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="cancel()">&times;</button>
     </div>
 
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
 
-        <p>Êtes-vous sûr de vouloir supprimer cet user?</p>
+        <p id="jhi-delete-tache-heading">Être-vous sûr de vouloir supprimer cette tache?</p>
     </div>
 
     <div class="modal-footer">
@@ -16,7 +17,7 @@
             <fa-icon icon="ban"></fa-icon>&nbsp;<span>Annuler</span>
         </button>
 
-        <button type="submit" class="btn btn-danger">
+        <button id="jhi-confirm-delete-tache" type="submit" class="btn btn-danger">
             <fa-icon icon="times"></fa-icon>&nbsp;<span>Supprimer</span>
         </button>
     </div>
